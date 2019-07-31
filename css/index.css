@@ -7,23 +7,112 @@ body {
 	background: linear-gradient(#1d2124, #30363b);
 }
 
-.empty {
-	font-family: 'Josefin Sans', sans-serif;
+#vignette {
+	background: rgba(0, 0, 0, 255);
+	box-shadow: inset 0 0 100px rgba(0, 0, 0);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	animation: fade 2s 0.5s linear forwards;
+	z-index: 1;
+}
+
+@keyframes fade {
+	99% {
+		z-index: 1;
+	}
+	100% {
+		background: rgba(0, 0, 0, 0);
+		box-shadow: inset 0 0 100px rgba(0, 0, 0, 0);
+		z-index: -1;
+	}
+}
+
+#text {
+	width: 20%;
+	font-family: "Josefin Sans", sans-serif;
 	font-size: 25px;
 	color: white;
 	margin: auto;
 	text-align: center;
-	padding-top: 25%;
+	margin-top: 27%;
 }
 
-.image {
+#text #label::before, #text #label {
+	content: "";
+	animation: change1 0.3s forwards;
+}
+
+#text:hover #label::before, #text:hover #label {
+	animation: change2 0.3s forwards;
+}
+
+@keyframes flip {
+	0% {
+		transform: rotateX(0);
+	}
+	50% {
+		transform: rotateX(-90deg);
+	}
+	100% {
+		transform: rotateX(0);
+	}
+}
+
+@keyframes change1 {
+	0% {
+		transform: rotateX(0);
+		content: "Or is there?";
+	}
+	50% {
+		transform: rotateX(-90deg);
+		content: "Or is there?";
+	}
+	51% {
+		content: "Nothing to see here.";		
+	}
+	100% {
+		transform: rotateX(0);
+		content: "Nothing to see here.";
+	}
+}
+
+@keyframes change2 {
+	0% {
+		transform: rotateX(0);
+		content: "Nothing to see here.";
+	}
+	50% {
+		transform: rotateX(-90deg);
+		content: "Nothing to see here.";
+	}
+	51% {
+		content: "Or is there?";		
+	}
+	100% {
+		transform: rotateX(0);
+		content: "Or is there?";
+	}
+}
+
+#image {
 	display: block;
 	margin: auto;
-	width: 10%;
+	width: 125px;
 	height: auto;
 	position: relative;
 	animation: bob 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
 }
+
+#shadow {
+	margin: auto;
+	margin-top: -2%;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	animation: pulse 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+  }
 
 @keyframes bob {
 	0%, 100% {
@@ -32,4 +121,21 @@ body {
 	50% {
 		bottom: 20px;
 	}
+}
+
+@keyframes pulse {
+	0%, 100% {
+		width: 80px;
+		height: 35px;
+	}
+	50% {
+		width: 48px;
+		height: 21px;
+	}
+}
+
+#video {
+	display: block;
+	margin: auto;
+	transform: translateY(50%);
 }
