@@ -24,6 +24,7 @@ var poi = [
 	{x: 703, y: 288, text: "Guild Training"},
 	{x: 684, y: 250, text: "Docks"},
 	{x: 510, y: 340, text: "Cleavewood Forest"},
+	{x: 415, y: 400, text: "Newberg Castle"},
 ]
 poi.sort(function(a, b) {return a.y - b.y});
 
