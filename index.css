@@ -1,0 +1,381 @@
+/* Config */
+:root {
+    --color-dark: #000000;
+    --color-mid: #333333;
+    --color-light: #dddddd;
+    --color-accent: #2EB62A;
+
+    --font-family: "Courier New", Courier, monospace;
+
+    /* This fixes bleeding borders with regular blur() filter */
+    --filter-blur: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a' x='0' y='0' width='1' height='1'%3E%3CfeGaussianBlur stdDeviation='4' result='b'/%3E%3CfeMorphology operator='dilate' radius='4'/%3E %3CfeMerge%3E%3CfeMergeNode/%3E%3CfeMergeNode in='b'/%3E%3C/feMerge%3E%3C/filter%3E%3C/svg%3E#a");
+}
+
+/* [Rule Order]
+content, display,
+position, size, box (inside-out),
+color, bgcolor
+font-family, -size, -style
+flags, cursor
+
+2+ of same group separate with newline
+*/
+
+/* Global style */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
+
+    font-family: var(--font-family);
+    font-weight: normal;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    color: var(--color-light);
+    background-color: var(--color-dark);
+}
+
+#right {
+    grid-column: 2;
+    width: 50%;
+    overflow: auto;
+}
+
+#left {
+    grid-column: 1;
+    overflow: auto;
+}
+
+#sticky {
+    position: fixed;
+    width: inherit;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-light) var(--color-dark);
+}
+
+*::-webkit-scrollbar {
+    width: 3px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: var(--color-dark);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color-light);
+}
+
+/* Social/contact links */
+#social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    float: right;
+    height: 100vh;
+    padding: 10px;
+}
+
+.icon {
+    height: 50px;
+    padding: 5px;
+
+    color: var(--color-light);
+
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.icon:hover {
+    color: var(--color-accent);
+}
+
+.tooltip {
+    position: absolute;
+    right: 100%;
+
+    width: max-content;
+    padding: 3px 5px;
+
+    color: var(--color-light);
+    background-color: var(--color-mid);
+
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: normal;
+
+    visibility: hidden;
+}
+
+*:hover > .tooltip {
+    visibility: visible;
+}
+
+#discord {
+    position: relative;
+    background: none;
+    cursor: pointer;
+}
+
+#email {
+    position: relative;
+}
+
+/* Main section */
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 50px 0px;
+}
+
+#logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo-container > * {
+    display: block;
+    width: 30%;
+
+    margin: 25px;
+    margin-top: 0;
+}
+
+#logo-animated {
+    display: none;
+}
+
+#logo-container:hover #logo {
+    display: none;
+}
+
+#logo-container:hover #logo-animated {
+    display: block;
+}
+
+#hero h1 {
+    color: var(--color-accent);
+}
+
+#hero h3 {
+    font-size: 18px;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 18px;
+}
+
+#about p {
+    margin: 0px 30px;
+    text-align: center;
+}
+
+#skills {
+    display: flex;
+    width: 100%;
+    margin: 30px 0px;
+    font-size: 16px;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.list ul {
+    list-style-type: none;
+}
+
+.list ul li:first-child {
+    color: var(--color-accent);
+}
+
+#copyright-desktop {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding: 5px;
+}
+
+#copyright-mobile {
+    padding: 5px;
+    text-align: center;
+    visibility: hidden;
+}
+
+/* Portfolio */
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(384px, 1fr));
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: calc(9 / 16 * 100%)
+}
+
+.project a {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.project img {
+    position: absolute;
+    top: -100%; bottom: -100%;
+    width: 100%;
+    margin: auto;
+}
+
+.project:hover img {
+    filter: var(--filter-blur);
+}
+
+.project-lang {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    height: 50px;
+    padding: 10px;
+
+    color: var(--color-accent);
+
+    font-size: 50px;
+    line-height: 15px;
+    text-align: center;
+    text-decoration: none;
+
+    opacity: 50%;
+}
+
+.project:hover .project-lang {
+    opacity: 100%;
+}
+
+.project p {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 1ch 1em;
+
+    color: var(--color-light);
+    background-color: #00000088;
+
+    visibility: hidden;
+}
+
+.project p::before {
+    content: attr(data-header);
+    display: block;
+    font-size: 20px;
+    color: var(--color-accent);
+}
+
+.project:hover p {
+    visibility: visible;
+}
+
+#totop {
+    display: block;
+    width: 100%;
+    padding: 10px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: var(--color-light);
+    background-color: var(--color-mid);
+}
+
+#totop:hover {
+    color: var(--color-dark);
+    background-color: var(--color-accent);
+}
+
+/* Media Queries */
+@media (max-width: 1000px) {
+    /* Stack vertically */
+	body {
+        grid-template-columns: 1fr;
+    }
+
+    #right {
+        grid-column: unset;
+        width: 100%;
+    }
+
+    #left {
+        grid-column: unset;
+    }
+
+    #sticky {
+        position: relative;
+    }
+
+    #social {
+        flex-direction: row;
+        float: unset;
+        height: auto;
+    }
+
+    .tooltip {
+        position: absolute;
+        right: unset;
+        left: 0;
+        top: 100%;
+
+        font-size: 16px;
+        padding: 3px 5px;
+    }
+
+    .project:hover a {
+        visibility: hidden;
+
+        animation: 1ms show;
+        animation-fill-mode: forwards;
+    }
+
+    /* This is a hack for mobile to let users tap once for description, twice for url */
+    @keyframes show {
+        0% { visibility: hidden; }
+        100% { visibility: visible; }
+    }
+
+    #totop {
+        grid-column: unset;
+    }
+
+    #copyright-desktop {
+        visibility: hidden;
+    }
+
+    #copyright-mobile {
+        visibility: visible;
+    }
+}
