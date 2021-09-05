@@ -143,11 +143,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    width: 25%;
 }
 
 #logo-container > * {
     display: block;
-    width: 30%;
+    width: 100%;
 
     margin: 25px;
     margin-top: 0;
