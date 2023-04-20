@@ -1,191 +1,21 @@
----
----
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>GreenXenith | My pocket dimension in the vast sea that is the internet.</title>
-        <meta name="description" content="GreenXenith's personal website and portfolio.">
-        <link rel="icon" href="img/logo.png">
+        <title>GreenXenith | My pocket dimension in the vast sea of the internet.</title>
+        <link rel="icon" type="image/png" href="../img/favicon.png">
 
-        <link rel="stylesheet" href="icons.css">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="styles/global.css">
+        <link rel="stylesheet" href="styles/index.css">
+
+        <title>GreenXenith</title>
     </head>
-
     <body>
-        <div id="right">
-            <div id="sticky">
-                <div id="social">
-                    <!-- Discord has no direct URL to add friends, so I'll provide a selectable user tag -->
-                    <button id="discord" class="icon icon-social-discord" title="Discord" style="user-select: all;" role="link" tabindex=0 aria-label="Discord (GreenXenith#3232 - Click to copy. JavaScript required.)">
-                        <span id="discordcopy" class="tooltip">GreenXenith#3232</span>
-                    </button>
-                    <a target="_blank" class="icon icon-social-github" title="GitHub" href="https://github.com/GreenXenith"></a>
-                    <a target="_blank" class="icon icon-social-twitter" title="Twitter" href="https://twitter.com/GreenXenith"></a>
-                    <a target="_blank" class="icon icon-social-youtube" title="YouTube" href="https://youtube.com/channel/UCtflkJFCm51moOx9Y8p4cBA"></a>
-                    <a target="_blank" class="icon icon-social-reddit" title="Reddit" href="https://reddit.com/u/GreenXenith"></a>
-                    <!-- Email inserted by JavaScript to thwart scrapers -->
-                    <a id="email" class="icon icon-social-envelope" title="Email" href="#" aria-label="Email (JavaScript required)">
-                        <span id="jswarn" class="tooltip">Enable JavaScript for email address</span>
-                    </a>
-
-                    <script>
-                        const discord = document.getElementById("discord");
-                        discord.style = ""; // `user-select: all` is only necessary for manual copying
-                        discord.onclick = () => navigator.clipboard.writeText("GreenXenith#3232");
-                        document.getElementById("discordcopy").innerHTML += " (Click to copy)";
-
-                        const addr = atob("Z3JlZW54ZW5pdGhAZ21haWwuY29t"); // Email address in base64
-                        const email = document.getElementById("email");
-
-                        email.href = `${atob("bWFpbHRv")}:${addr}`; // Scheme in base64 too to deter scrapers
-                        email.setAttribute("aria-label", `Email (${addr})`);
-
-                        document.getElementById("jswarn").remove();
-                    </script>
-                </div>
-
-                <div id="hero">
-                    <div id="logo-container">
-                        <img id="logo" src="img/logo.png" alt="logo">
-                        <img id="logo-animated" src="img/logo.gif" alt="logo">
-                    </div>
-                    <h1>I am GreenXenith.</h1>
-                    <h3>(call me Alex if you like)</h3>
-                </div>
-
-                <div id="about">
-                    <p>Programmer for <span id="years">{{ site.time | date: "%Y" | minus: 2013 }}</span> years.</p>
-                    <p>I like crafting experiences and pushing limits.</p>
-                    <p>I &hearts; cleanliness, efficiency, and FOSS.</p>
-                    <script>document.getElementById("years").innerHTML = new Date().getFullYear() - 2013;</script>
-
-                    <div id="skills">
-                        <div id="languages" class="list">
-                            <ul><li>Languages</li>
-                                <li>Lua</li>
-                                <li>Rust</li>
-                                <li>JavaScript</li>
-                                <li>Python</li>
-                                <li>HTML5/CSS3</li>
-                                <li>C++</li>
-                                <li>Haxe</li>
-                                <li>Go</li>
-                            </ul>
-                        </div>
-
-                        <div id="tools" class="list">
-                            <ul><li>Tools</li>
-                                <li>Git</li>
-                                <li>Linux</li>
-                                <li>Visual Studio Code</li>
-                                <li>NodeJS</li>
-                                <li>Blender</li>
-                                <li>GIMP</li>
-                                <li>Aseprite</li>
-                                <li>Audacity</li>
-                            </ul>
-                        </div>
-
-                        <div id="experience" class="list">
-                            <ul><li>Experience</li>
-                                <li>[Contact me for resume]</li>
-                                <!-- This will get filled in at some later date -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <p id="copyright-desktop">Copyright &copy; 2021 GreenXenith</p>
-            </div>
-        </div>
-
-        <div id="left">
-            <div id="projects">
-                <div class="project">
-                    <img src="img/thumb_tetris.png" alt="Tetris">
-                    <p data-header="HLA Tetris">Tetris written in High Level Assembly for fun. It mostly works.</p>
-                    <div class="project-lang icon-lang-hla"></div>
-                    <a href="https://github.com/GreenXenith/hla-tetris/" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_ricketyranch.png" alt="Rickety Ranch">
-                    <p data-header="Rickety Ranch">My submission for the 49th Ludum Dare game jam. Help an unhinged horse destroy everything. Ranked 5th for humor.</p>
-                    <div class="project-lang icon-lang-lua"></div>
-                    <a href="https://github.com/GreenXenith/ricketyranch/" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_pycraft.png" alt="PyCraft">
-                    <p data-header="PyCraft">A blocky game (renderer) implemented in Pygame. Because why not?</p>
-                    <div class="project-lang icon-lang-python"></div>
-                    <a href="https://github.com/GreenXenith/pycraft" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_zoria.png" alt="Zoria">
-                    <p data-header="Zoria">An infinite dungeon-crawler roguelike written in Pygame. Collect coins, slash slimes, and dive deeper.</p>
-                    <div class="project-lang icon-lang-python"></div>
-                    <a href="https://github.com/GreenXenith/zoria" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_turtlecraft.png" alt="TurtleCraft">
-                    <p data-header="TurtleCraft">An isometric block game chunk renderer written with the Python turtle. Just for fun.</p>
-                    <div class="project-lang icon-lang-python"></div>
-                    <a href="https://github.com/GreenXenith/turtlecraft" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_minetestbot.png" alt="MinetestBot">
-                    <p data-header="MinetestBot">A Discord utility bot for Minetest-related things.</p>
-                    <div class="project-lang icon-lang-nodejs"></div>
-                    <a href="https://github.com/MinetestBots/minetestbot" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_minetest_tools.png" alt="Minetest Tools">
-                    <p data-header="Minetest Tools">An extension for Visual Studio Code with various Minetest development utilities (autocompletion, boilerplates, etc).</p>
-                    <div class="project-lang icon-lang-javascript"></div>
-                    <a href="https://github.com/GreenXenith/minetest-tools" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_ironrift.png" alt="Ironrift">
-                    <p data-header="Ironrift">A battlefield-style first-person shooter written in Rust with Bevy. This was made as an experiment, it barely works.</p>
-                    <div class="project-lang icon-lang-rust"></div>
-                    <a href="https://github.com/GreenXenith/ironrift" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_minetest_mods.png" alt="Minetest Mods">
-                    <p data-header="Minetest Mods">Over 40 mods I've written for the Minetest game engine.</p>
-                    <div class="project-lang icon-lang-lua"></div>
-                    <a href="https://github.com/search?q=user%3AGreenXenith+language%3ALua&type=Repositories" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_blender_rigs.png" alt="Blender Rigs">
-                    <p data-header="Blender Rigs">Various models I've created and rigged in Blender.</p>
-                    <div class="project-lang icon-lang-blender"></div>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_blender_robot.png" alt="Robot Render">
-                    <p data-header="Robot Render">One of my first serious Blender projects.</p>
-                    <div class="project-lang icon-lang-blender"></div>
-                    <a href="img/full_blender_robot.png" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_blender_desk.png" alt="Desk Render">
-                    <p data-header="Desk Render">One of my first forays into photorealistic rendering.</p>
-                    <div class="project-lang icon-lang-blender"></div>
-                    <a href="img/full_blender_desk.png" target="_blank"></a>
-                </div>
-                <div class="project">
-                    <img src="img/thumb_website.png" alt="greenxenith.com">
-                    <p data-header="greenxenith.com">This website!</p>
-                    <div class="project-lang icon-lang-html5"></div>
-                    <a href="https://github.com/GreenXenith/greenxenith.github.io" target="_blank"></a>
-                </div>
-            </div>
-            <a id="totop" href="#top">Back to Top</a>
-        </div>
-        <p id="copyright-mobile">Copyright &copy; 2021 GreenXenith</p>
+        <img src="img/favicon.png" alt="" width="100" height="100">
+        <h1>Nothing to see here.</h1>
+        <a href="/portfolio">Portfolio</a>
     </body>
 </html>

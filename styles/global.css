@@ -1,0 +1,164 @@
+/* Config */
+:root {
+    /* --grey-darker: #1a1a1a;
+    --grey-dark: #232525;
+    --grey-mid: #2c3d42;
+    --grey-light: #4a525f;
+    --grey-lighter: #a7a7a7;
+    --grey-lightest: #dae0e0;
+    --accent-lighter: #26da71;
+    --accent-mid: #2ab648;
+    --accent-darker: #138b53; */
+
+    /* --grey-darker: #ff2a2a; */
+    --grey-darker: #ffee00;
+    --grey-dark: #ff9100;
+    --grey-mid: #ffee00;
+    /* --grey-light: #33ff00; */
+    --grey-light: #0026ff;
+    --grey-lighter: #0026ff;
+    --grey-lightest: #8c00ff;
+    --accent-lighter: #ffffff;
+    --accent-mid: #808080;
+    /* --accent-darker: #000000; */
+
+    --color-primary-light: #aaa;
+    --color-primary-dark: #aaa;
+    --color-secondary-light: #aaa;
+    --color-secondary-dark: #aaa;
+    --color-tertiary-light: #aaa;
+    --color-tertiary-dark: #aaa;
+
+
+    /* --color-text-primary: rgb(255, 255, 255);
+    --color-text-secondary: rgb(138, 160, 175);
+    --color-link-primary: rgb(255, 162, 205);
+    --color-link-secondary: rgb(123, 255, 0);
+    --color-item-primary: rgb(27, 119, 107);
+    --color-item-secondary: rgb(72, 130, 145);
+    --color-background: rgb(0, 47, 61); */
+
+    --color-text-primary: rgb(250, 255, 254);
+    --color-text-secondary: rgb(176, 204, 204);
+    --color-link-primary: rgb(255, 196, 173);
+    --color-link-secondary: rgb(255, 228, 205);
+    --color-item-primary: rgb(28, 120, 110);
+    --color-item-secondary: rgb(65, 116, 109);
+
+
+    --color-bright: rgb(250, 255, 254);
+    --color-dull: rgb(176, 204, 204);
+
+    --color-accent-bright: rgb(255, 228, 205);
+    --color-accent-dull: rgb(255, 196, 173);
+
+    --color-primary-bright: rgb(28, 120, 110);
+    --color-primary-dull: rgb(65, 116, 109);
+
+    --color-background-bright: rgb(3, 50, 58);
+    --color-background-dull: rgb(4, 31, 43);
+    /* --color-item-secondary: rgb(3, 139, 55); */
+    /* --color-background: rgb(3, 50, 58); */
+    /* --color-background: linear-gradient(0deg, rgb(4, 31, 43), rgb(3, 50, 58)); */
+}
+
+/* Fonts */
+@font-face {
+    font-family: "icons";
+    src: url("../fonts/icons.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Noto Sans"), url("../fonts/NotoSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: italic;
+    font-weight: 400;
+    src: local("Noto Sans"), url("../fonts/NotoSans-Italic.ttf");
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Noto Sans"), url("../fonts/NotoSans-Light.ttf");
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: italic;
+    font-weight: 300;
+    src: local("Noto Sans"), url("../fonts/NotoSans-LightItalic.ttf");
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Noto Sans"), url("../fonts/NotoSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: italic;
+    font-weight: 700;
+    src: local("Noto Sans"), url("../fonts/NotoSans-BoldItalic.ttf");
+}
+
+
+/* [Rule Order]
+content, display,
+position, size, box (inside-out),
+color, bgcolor
+font-family, -size, -style
+flags, cursor
+
+2+ of same group separate with newline
+*/
+
+/* Global style */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
+
+    font-family: "Noto Sans", sans-serif;
+    font-weight: normal;
+
+    color: var(--color-text-primary);
+}
+
+html {
+    scrollbar-color: var(--color-primary-bright) transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary-bright);
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar-track {
+    background: var(--color-background-bright);
+}
+
+body {
+    min-height: 100vh;
+}
+
+body, section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section, header, footer {
+    width: 66.66%;
+}

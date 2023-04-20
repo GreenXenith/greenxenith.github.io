@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>GreenXenith | Portfolio</title>
+        <link rel="icon" type="image/png" href="../img/favicon.png">
+
+        <link rel="stylesheet" href="../styles/global.css">
+        <link rel="stylesheet" href="../styles/portfolio.css">
+
+        <script src="../js/portfolio.js"></script>
+
+        <title>GreenXenith</title>
+    </head>
+    <body>
+        <a href="#top" id="to-top" title="Back to Top">&UpArrow;</a>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#software">Software</a></li>
+                    <li><a href="#media">Media</a></li>
+                </ul>
+            </nav>
+            <div id="contact">
+                <ul>
+                    <li><a href="https://github.com/GreenXenith/" target="_blank">GitHub</a></li>
+                    <li><a id="email" href="#">Email</a></li>
+                    <li id="discord">
+                        <span id="show-discord">Discord</span>
+                        <span id="discord-tag">GreenXenith#3232</span>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section id="hero">
+            <canvas id="hero-canvas"></canvas>
+            <div id="me">
+                <h1>GreenXenith</h1>
+                <p>I want to create memorable experiences.</p>
+            </div>
+        </section>
+        <div class="separator"></div>
+        <section id="skills">
+            <ul>
+                <li class="skill_block">
+                    <h3>Languages</h3>
+                    <ul class="skill_list">
+                        <li class="mastery">Lua</li>
+                        <li class="mastery">Python</li>
+                        <li>JavaScript</li>
+                        <li>C++</li>
+                        <li>Rust</li>
+                        <li>C#</li>
+                        <li class="mastery">HTML/CSS</li>
+                        <li>Shell</li>
+                        <li class="mastery">And anything else you need.</li>
+                    </ul>
+                </li>
+                <li class="skill_block">
+                    <h3 class="section_header">Disciplines</h3>
+                    <ul class="skill_list">
+                        <li class="mastery">Programming</li>
+                        <li>Web Development</li>
+                        <li>System Administration</li>
+                        <li class="mastery">Textures</li>
+                        <li class="mastery">3D Models</li>
+                        <li>Rigging and Animation</li>
+                        <li>Music and Sound</li>
+                    </ul>
+                </li>
+                <li class="skill_block">
+                    <h3 class="section_header">Tools</h3>
+                    <ul class="skill_list">
+                        <li class="mastery">Linux</li>
+                        <li>Git</li>
+                        <li>Databases</li>
+                        <li>Vector Math</li>
+                        <li>3D Rendering</li>
+                        <li>NodeJS</li>
+                        <li class="mastery">Blender</li>
+                        <li class="mastery">GIMP</li>
+                        <li>Audacity</li>
+                        <li>Wine</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><em>* I'm pretty good at these.</em></p>
+        </section>
+        <div class="separator"></div>
+        <section id="software">
+            <h2 class="section_header">Software</h1>
+            <div class="card-list">
+                <div class="card">
+                    <img src="../img/thumb_ricketyranch.png" alt="A retro-style platformer on a farm with an insane horse.">
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>Rickety Ranch</h3>
+                            <p>Lua + <a href="https://love2d.org/" target="_blank">LÖVE2D</a></p>
+                        </span>
+                        <p>My entry for the 49th <em>Ludum Dare</em> 3-day game jam. A simple platformer with some hastily-animated cutscenes. Ranked 5th for Humor.</p>
+                        <span class="card-footer">
+                            <span class="links">
+                                <a href="https://www.greenxenith.com/ricketyranch/" target="_blank">Play</a>
+                                <a href="https://github.com/GreenXenith/ricketyranch/" target="_blank">Source</a>
+                                <a href="https://ldjam.com/events/ludum-dare/49/rickety-ranch" target="_blank">Event Page</a>
+                            </span>
+                            <p class="date">October 2021</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../img/thumb_ironrift.png" alt="A simple first-person shooter with some low-poly assets and some monkey enemies.">
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>Ironrift</h3>
+                            <p>Rust + <a href="https://bevyengine.org/" target="_blank">Bevy</a></p>
+
+                        </span>
+                        <p>An experiment in Rust and battlefield-like first-person shooters.</p>
+                        <span class="card-footer">
+                            <span class="links">
+                                <a href="https://github.com/GreenXenith/ironrift" target="_blank">Source</a>
+                            </span>
+                            <p class="date">May 2021</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../img/thumb_pycraft.png" alt="Cubic terrain rendered in 3D.">
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>Pycraft</h3>
+                            <p>Python + <a href="https://www.pygame.org/" target="_blank">Pygame</a></p>
+                        </span>
+                        <p>A voxel renderer written in Pygame, because why not?</p>
+                        <span class="card-footer">
+                            <span class="links">
+                                <a href="https://replit.com/@GreenXenith/pycraft" target="_blank">
+                                    Try it
+                                    <span class="risk-tip">Web version is very slow.<br>Use at your own risk.</span>
+                                </a>
+                                <a href="https://github.com/GreenXenith/pycraft" target="_blank">Source</a>
+                            </span>
+                            <p class="date">May 2020</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../img/thumb_zoria.png" alt="A top-down retro-style dungeon crawler.">
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>Zoria</h3>
+                            <p>Python + <a href="https://www.pygame.org/" target="_blank">Pygame</a></p>
+                        </span>
+                        <p>An infinite dungeon-crawler roguelike written in Pygame. Collect keys, slash slimes, and dive deeper.</p>
+                        <span class="card-footer">
+                            <span class="links">
+                                <a href="https://replit.com/@GreenXenith/zoria" target="_blank">
+                                    Play
+                                    <span class="risk-tip">Web version is slow.<br>Use at your own risk.</span>
+                                </a>
+                                <a href="https://github.com/GreenXenith/zoria/" target="_blank">Source</a>
+                            </span>
+                            <p class="date">April 2020</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../img/thumb_tetris.png" alt="Very simple Tetris falling block game.">
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>Tetris</h3>
+                            <p><a href="https://en.wikipedia.org/wiki/High_Level_Assembly" target="_blank">High Level Assembly</a></p>
+                        </span>
+                        <p>Tetris written in High Level Assembly and X11 for fun. It mostly works.</p>
+                        <span class="card-footer">
+                            <span class="links">
+                                <a href="https://github.com/GreenXenith/hla-tetris/" target="_blank">Source</a>
+                            </span>
+                            <p class="date">December 2021</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../img/thumb_minetest_mods.png" alt="Various content created for the Minetest game engine.">
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>Minetest Contributions</h3>
+                            <p>C++/Lua + <a href="https://www.minetest.net/" target="_blank">Minetest</a></p>
+                        </span>
+                        <p>Over 40 content modules and a few engine changes I have contributed to the Minetest game engine.</p>
+                        <span class="card-footer">
+                            <span class="links">
+                                <a href="https://github.com/search?q=user%3AGreenXenith+language%3ALua&type=Repositories" target="_blank">Mod Repositories</a>
+                                <a href="https://github.com/minetest/minetest/pulls?q=author%3AGreenXenith+is%3Aclosed+is%3Apr" target="_blank">Engine Changes</a>
+                            </span>
+                            <p class="date">2015 - Now</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../img/thumb_minetest_tools.png" alt="A Visual Studio Code extension for Minetest utilites.">
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>Minetest Tools</h3>
+                            <p>JavaScript</p>
+                        </span>
+                        <p>An extension for Visual Studio Code with various Minetest development utilities (autocompletion, boilerplates, etc).</p>
+                        <span class="card-footer">
+                            <span class="links">
+                                <a href="https://marketplace.visualstudio.com/items?itemName=GreenXenith.minetest-tools" target="_blank">Marketplace</a>
+                                <a href="https://github.com/GreenXenith/minetest-tools" target="_blank">Source</a>
+                            </span>
+                            <p class="date">January 2020 - Now</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../img/thumb_turtlecraft.png" alt="Some isometric cubes rendered with the Python turtle.">
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>Turtlecraft</h3>
+                            <p>Python + <a href="https://docs.python.org/3/library/turtle.html" target="_blank">Turtle</a></p>
+                        </span>
+                        <p>An isometric block game chunk renderer written with the Python turtle. Just for fun.</p>
+                        <span class="card-footer">
+                            <span class="links">
+                                <a href="https://replit.com/@GreenXenith/turtlecraft" target="_blank">
+                                    Try it
+                                    <span class="risk-tip">Web version is very slow.<br>Use at your own risk.</span>
+                                </a>
+                                <a href="https://github.com/GreenXenith/turtlecraft" target="_blank">Source</a>
+                            </span>
+                            <p class="date">Februrary 2020</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="separator"></div>
+        <section id="media">
+            <div id="view-overlay" class="close-overlay">
+                <div id="image-container">
+                    <img id="full-image" src="" alt="Full resolution image.">
+                    <div id="close-button" class="close-overlay"></div>
+                </div>
+            </div>
+            <h2 class="section_header">Media</h1>
+            <div class="card-list">
+                <div class="card">
+                    <div class="image-thumb" full-src="../img/full_blender_robot.png">
+                        <img src="../img/thumb_blender_robot.png" alt="A photorealistic render of a rusty orange robot contemplating a broken Rubiks cube.">
+                    </div>
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>"Incomplete"</h3>
+                            <p><a href="https://blender.org/" target="_blank">Blender</a></p>
+                        </span>
+                        <p></p>
+                        <span class="card-footer">
+                            <div><!-- This is a spacer --></div>
+                            <p class="date">May 2018</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-thumb" full-src="../img/full_blender_desk.png">
+                        <img src="../img/thumb_blender_desk.png" alt="A simple photorealistic scene of a desk with some papers, a potted plant, and a drink.">
+                    </div>
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>"Photorealistic Desk"</h3>
+                            <p><a href="https://blender.org/" target="_blank">Blender</a></p>
+                        </span>
+                        <p>A first attempt at photorealistic modelling and rendering.</p>
+                        <span class="card-footer">
+                            <div><!-- This is a spacer --></div>
+                            <p class="date">March 2018</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-thumb" full-src="../img/full_gamejam_2022_banner.png">
+                        <img src="../img/thumb_gamejam_2022_banner.png" alt="A pixel-art scene of a person working on a laptop at a desk in a small room with a night view of the city.">
+                    </div>
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>2022 Minetest Game Jam Banner</h3>
+                            <p><a href="https://gimp.org/" target="_blank">GIMP</a></p>
+                        </span>
+                        <p>The game jam banner for the <a href="https://forum.minetest.net/viewtopic.php?t=28802" target="_blank">2022 Minetest Game Jam</a>, hosted and managed by me.</p>
+                        <span class="card-footer">
+                            <div><!-- This is a spacer --></div>
+                            <p class="date">November 2022</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-thumb" full-src="../img/full_gamejam_2021_banner.png">
+                        <img src="../img/thumb_gamejam_2021_banner.png" alt="A pixel-art terrain of cubes with blueprint gridlines.">
+                    </div>
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>2021 Minetest Game Jam Banner</h3>
+                            <p><a href="https://gimp.org/" target="_blank">GIMP</a></p>
+                        </span>
+                        <p>The game jam banner for the <a href="https://forum.minetest.net/viewtopic.php?t=27512" target="_blank">2021 Minetest Game Jam</a>, hosted and managed by me.</p>
+                        <span class="card-footer">
+                            <div><!-- This is a spacer --></div>
+                            <p class="date">December 2021</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../img/thumb_blender_rigs.png" alt="A set of rigged models in Blender.">
+                    <div class="card-description">
+                        <span class="card-header">
+                            <h3>Animated Minetest Models</h3>
+                            <p><a href="https://blender.org/" target="_blank">Blender</a></p>
+                        </span>
+                        <p>Various models created, rigged, and animated for Minetest mods.</p>
+                        <span class="card-footer">
+                            <div><!-- This is a spacer --></div>
+                            <p class="date">2017 - 2018</p>
+                        </span>
+                    </div>
+                </div>
+        </section>
+        <footer>Copyright &copy; 2023 GreenXenith</footer>
+    </body>
+</html>
