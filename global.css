@@ -102,5 +102,11 @@ body, section {
 }
 
 section, header, footer {
-    width: 66.66%;
+    width: 960px;
+}
+
+@media (max-width: 1000px) {
+    section, header, footer {
+        width: 90%;
+    }
 }

@@ -1,10 +1,30 @@
+// Obfuscate email
 document.addEventListener("click", e => {
     if (e.target.id == "email") {
-        // Obfuscated email
         location.href = atob("bWFpbHRvOg==") + atob("Z3JlZW54ZW5pdGhA") + atob("Z21haWwuY29t");
     }
 });
 
+// Pause/play videos when out of focus
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.play();
+            } else {
+                entry.target.pause();
+            };
+        });
+    });
+
+    Array.from(document.getElementsByTagName("video")).forEach(video => observer.observe(video));
+});
+
+document.addEventListener("visibilitychange", () => {
+    Array.from(document.getElementsByTagName("video")).forEach(video => document.hidden ? video.pause() : video.play());
+});
+
+// Hero rain
 window.addEventListener("load", () => {
     const container = document.getElementById("hero");
     const canvas = document.getElementById("hero-canvas");
@@ -138,19 +158,21 @@ window.addEventListener("load", () => {
     window.requestAnimationFrame(update);
 });
 
+// Gallery image viewer
 window.addEventListener("load", () => {
     const overlay = document.getElementById("view-overlay");
     const img = document.getElementById("full-image");
 
-    document.addEventListener("click", e => {
-        if (e.target.className == "image-thumb") {
-            img.src = e.target.getAttribute("full-src");
-            overlay.style.visibility = "visible";
-            overlay.style.opacity = 1;
-        } else if (e.target.className == "close-overlay") {
-            overlay.style.visibility = "hidden";
-            overlay.style.opacity = 0;
-            img.src = "";
-        }
-    });
+    document.querySelectorAll(".gallery-card[data-full-src] img").forEach(el => el.addEventListener("click", e => {
+        img.src = e.target.parentNode.getAttribute("data-full-src");
+        overlay.style.visibility = "visible";
+        overlay.style.opacity = 1;
+    }))
+
+    document.querySelectorAll(".close-overlay").forEach(el => el.addEventListener("click", e => {
+        if (e.target !== el) return;
+        overlay.style.visibility = "hidden";
+        overlay.style.opacity = 0;
+        img.src = "";
+    }));
 });
